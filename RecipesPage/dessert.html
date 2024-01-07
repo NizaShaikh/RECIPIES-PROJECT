@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drinks</title>
+  <style>
+     *{
+      font-family:sans-serif;
+      text-align: center;
+    }
+    h1{
+        margin-right: 1090px;
+        margin-top: 30px;
+        color: chocolate;
+        text-shadow: 4px 4px 4px rgb(242, 127, 86);
+        font-size: 35px;
+      }
+
+      .searchBox {
+        margin-top: -30px;
+        color: rgb(242, 127, 86);
+        margin-right: -5rem;
+      }
+      
+      .searchBox input {
+        font-size: 1rem;
+        border-radius: 20px;
+  border: 1px solid chocolate;
+  padding: 0.3rem ;
+  width: 40%;
+}
+
+.searchBox ::placeholder{
+  color: rgb(242, 127, 86);
+}
+.btn{
+  border-radius: 20px;
+   margin-top: 10px;
+   margin-bottom: 40px;
+  cursor:pointer;
+  padding: 0.3rem;
+  border:2px solid chocolate;
+  font-size: 14px;
+  font-weight: 700;
+  background-color: rgb(228, 141, 79);
+  color: aliceblue;
+}
+
+.btn:hover{
+  background-color: rgb(245, 245, 245);
+  color: chocolate;
+}
+
+
+      .links{
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 2px;
+  margin-bottom: 30px;
+  display: inline-block;
+  text-decoration: none;
+  align-items: center;
+}
+
+a:link{
+  color: rgb(0, 0, 0);
+}
+a:hover{
+  color:red;
+}
+a:active{
+  color: rgb(104, 219, 87);
+}
+
+#btn{
+  position: absolute;
+  top: 25px;
+  right:30px;
+  cursor:pointer;
+  padding: 8px;
+  border:2px solid chocolate;
+  font-size: 14px;
+  font-weight: 700;
+  background-color: rgb(228, 141, 79);
+  color: aliceblue;
+}
+
+#btn:hover{
+  background-color: rgb(245, 245, 245);
+  color: chocolate;
+}
+
+.container-1{
+  display: flex;
+  gap:9rem 9rem;
+  padding-bottom: 30px;
+  margin-left: 150px;
+}
+.container-2{
+  display: flex;
+  gap:9rem 9rem;
+  padding-bottom: 30px;
+  margin-left: 180px;
+}
+.container-3{
+  display: flex;
+  gap:9rem 9rem;
+  padding-bottom: 10px;
+  margin-left: 180px;
+}
+
+.desserts{
+  margin-top: 20px;
+  margin-bottom: 50px;
+  margin-left: -60px;
+}
+
+.des-head{
+  font-size:25px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+  font-weight: 700;
+  margin-left: 30px;
+  color: black;
+  padding-bottom:10px ;
+  padding-top: 40px;
+}
+
+.box{
+ font-weight: 600;
+ font-size: 18px;
+ border: 2px solid rgb(106, 102, 102);
+ padding: 10px;
+ width: 60%;
+ margin-left:100px;
+ box-shadow: 5px 5px 5px rgb(89, 90, 88);
+ color: rgb(97, 95, 95);
+}
+
+.desserts a{
+    text-decoration: none;   
+}
+
+
+#footer{
+  text-align: center;
+  /* margin-bottom:0; */
+  margin-top: 90px;
+  background-color: chocolate;
+  color: aliceblue;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  font-weight: 400;
+  font-size: 18px;
+  padding-left: 30px;
+  padding-right: 20px;
+}
+  </style>
+</head>
+<body>
+  <!-- heading -->
+  <header>
+    <h1><strong>TASTY TALES</strong></h1>
+  </header>
+  
+  <div class="searchBox">
+    <input type="text" name="" id="find" placeholder="search here...." onkeyup="search()"><br>
+    <button type="button" id="submit" class="btn">Search</button>
+  </div>
+  
+  <!-- top links -->
+    <nav>
+      <a class="links" href="index.html">HOME</a>
+      <a class="links" href="about.html">ABOUT US</a>
+       <a class="links" href="recipes.html">RECIPES</a>
+       <a class="links"  href="#">BLOG</a>
+    </nav>    
+
+    <!--contact button  -->
+    <input type="button" id="btn" value="CONTACT" onclick="window.location.href='contact.html';" />
+ 
+
+    <!-- desserts images -->
+  <section class="desserts">
+     <div class="container-1">
+      <div class="des1">
+       <a href="des1.html"> <h2 class="des-head">Butterscotch sauce with burnt-butter bananas and ice cream</h2>
+      <img src="images/d1 (1).jpg" alt="error" height="350" width="400" ><p class="box">Prep : 15 mins  | Cook : 45 mins |  Total :  70 mins <br><br>Servings : 5-6  </p></a>
+    </div>
+ 
+    <div class="des2">
+      <a href="des2.html"> <h2 class="des-head">Vanilla yoghurt panna cotta with sumac strawberries and arak strawberry granita recipe</h2>
+     <img src="images/d2.jpg" alt="error" height="350" width="400" ><p class="box">Prep : 15 mins  | Cook : 45 mins |  Total :  70 mins <br><br>Servings : 5-6  </p></a>
+   </div>
+    </div>
+
+    <div class="container-2">
+   <div class="des3">
+    <a href="des3.html"> <h2 class="des-head">Blueberry and lemon verbena tarts</h2>
+   <img src="images/d6 (2).jpg" alt="error" height="350" width="400" ><p class="box">Prep : 15 mins  | Cook : 45 mins |  Total :  70 mins <br><br>Servings : 5-6  </p></a>
+ </div>
+
+ <div class="des4">
+  <a href="des4.html"> <h2 class="des-head">Cheat's pine lime and caramel ice cream parfaits</h2>
+ <img src="images/d4.jpg" alt="error" height="350" width="400" ><p class="box">Prep : 15 mins  | Cook : 45 mins |  Total :  70 mins <br><br>Servings : 5-6  </p></a>
+</div>
+</div>
+
+<div class="container-3">
+<div class="des5">
+  <a href="des5.html"> <h2 class="des-head">Muhallabia (Middle Eastern milk pudding)</h2>
+ <img src="images/d5.webp" alt="error" height="350" width="400" ><p class="box">Prep : 15 mins  | Cook : 45 mins |  Total :  70 mins <br><br>Servings : 5-6  </p></a>
+</div>
+
+<div class="des6">
+  <a href="des6.html"> <h2 class="des-head">Chocolate mousse with cherry ripe truffles</h2>
+ <img src="images/d3.webp" alt="error" height="350" width="400" ><p class="box">Prep : 15 mins  | Cook : 45 mins |  Total :  70 mins <br><br>Servings : 5-6  </p></a>
+</div>
+</div>       
+          </section>
+
+<!-- footer -->
+    <footer id="footer">
+      &copy;TastyTales Built By NizaShaikh
+    </footer>
+
+<script>
+  function search(){
+    const searchTerm=document.getElementById('find').value.toLowerCase();
+    const  desserts=document.querySelectorAll('.des-head');
+
+    desserts.forEach(dessert=>{
+      const dessertTitle=dessert.textContent.toLowerCase();
+      const parentContainer=dessert.parentElement.parentElement;
+
+      if(dessertTitle.includes(searchTerm)){
+        parentContainer.style.display='block';
+      }else{
+        parentContainer.style.display='none';
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

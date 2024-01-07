@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RECIPES</title>
+  <style>
+
+*{
+  font-family: sans-serif;
+  text-align: center;
+}
+
+h1{
+  margin-right: 1090px;
+  font-size: 35px;
+  
+  color: chocolate;
+  text-shadow: 4px 4px 4px rgb(242, 127, 86);
+}
+ 
+.links{
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 2px;
+  margin-bottom: 30px;
+  display: inline-block;
+  text-decoration: none;
+  align-items: center;
+  text-align: center;
+}
+
+a:link{
+  color: rgb(0, 0, 0);
+}
+a:hover{
+  color:red;
+}
+
+a:active{
+  color: rgb(104, 219, 87);
+}
+
+#btn{
+  position: absolute;
+  top: 25px;
+  right:30px;
+  cursor:pointer;
+  padding: 8px;
+  border:2px solid chocolate;
+  font-size: 14px;
+  font-weight: 700;
+  background-color: rgb(228, 141, 79);
+  color: aliceblue;
+}
+
+#btn:hover{
+  background-color: rgb(245, 245, 245);
+  color: chocolate;
+}
+
+#footer{
+  text-align: center;
+  margin-top: 120px;
+  background-color: chocolate;
+  color: aliceblue;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  font-weight: 400;
+  font-size: 18px;
+  padding-left: 30px;
+  padding-right: 20px;
+}
+
+.recipes{
+  position: relative;
+  display:flex ;
+  margin-top: 70px;
+  margin-left: 40px;
+  align-items: center;
+}
+
+.para{
+  /* position: absolute; */
+  text-transform: uppercase;
+  float: left;
+  margin-right: 1em;
+  text-align: center;
+  font-weight: 600;
+  margin-left: 100px;
+  font-size: 19px;
+}
+.para:hover{
+  color: chocolate;
+}
+.para:visited{
+  color: blue;
+}
+.para:active{
+  color: red;
+}
+
+
+    #drinks{
+  border: 3px solid green;
+}
+
+#starters{
+  border: 3px solid rgb(116, 116, 116);
+}
+
+#maincourse{
+  border: 3px solid black;
+}
+
+#desserts{
+  border: 3px solid rgb(180, 174, 174);
+}
+  </style>
+</head>
+<body>
+  <header>  
+    <h1><strong>TASTY TALES</strong></h1> 
+  </header>
+    <nav>
+     <a class="links" href="index.html">HOME</a>
+     <a class="links" href="about.html">ABOUT US</a>
+      <a class="links" href="recipes.html">RECIPES</a>
+      <a class="links"  href="#">BLOG</a>
+    </nav>
+    <input type="button" id="btn" value="CONTACT" onclick="window.location.href='contact.html';" />
+
+    <div class="recipes">
+      <a href="drinks.html"><img id="drinks" src="images/drink.jpg" alt="error" height="200px" width="230px">
+      <p class="para">Drinks</p></a>
+  
+      <a href="starters.html"><img id="starters" src="images/starters.avif" alt="error" height="200" width="230">
+      <p class="para">Starters</p></a>
+  
+      <a href="main-course.html"><img id="maincourse"src="images/main.avif" alt="error" height="200" width="230" >
+      <p class="para">Main Course</p></a>
+  
+      <a href="dessert.html"><img id="desserts"src="images/pexels-ash-376464.jpg" alt="error" height="200" width="230">
+      <p class="para">Desserts</p></a>
+  
+  </div>
+  
+   <footer id="footer">
+    &copy; <span id="date"></span> TastyTales Built By NizaShaikh
+  </footer>
+</body>
+</html>

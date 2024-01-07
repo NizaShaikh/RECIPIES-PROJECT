@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drinks</title>
+  <style>
+     *{
+      font-family:sans-serif;
+      text-align: center;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+ 
+    h1{
+        margin-top: 30px;
+        color: chocolate;
+        text-shadow: 4px 4px 4px rgb(242, 127, 86);
+        font-size: 35px;
+      }
+
+      .searchBox {
+        margin-top: -30px;
+        color: rgb(242, 127, 86);
+        margin-right: -5rem;
+      }
+      
+      .searchBox input {
+        font-size: 1rem;
+        border-radius: 20px;
+  border: 1px solid chocolate;
+  padding: 0.3rem ;
+  width: 40%;
+}
+
+.searchBox ::placeholder{
+  color: rgb(242, 127, 86);
+}
+.btn{
+  border-radius: 20px;
+   margin-top: 10px;
+   margin-bottom: 40px;
+  cursor:pointer;
+  padding: 0.3rem;
+  border:2px solid chocolate;
+  font-size: 14px;
+  font-weight: 700;
+  background-color: rgb(228, 141, 79);
+  color: aliceblue;
+}
+
+.btn:hover{
+  background-color: rgb(245, 245, 245);
+  color: chocolate;
+}
+
+
+.contact input {
+  margin: 1rem;
+}
+
+      .links{
+  margin-left: 90px;
+  margin-right: 30px;
+  margin-bottom: 2px;
+  display: inline-block;
+  text-decoration: none;
+  align-items: center;
+}
+
+a:link{
+  color: rgb(0, 0, 0);
+}
+a:hover{
+  color:red;
+}
+a:active{
+  color: rgb(104, 219, 87);
+}
+a{
+  text-decoration: none;
+}
+
+#btn{
+  position: absolute;
+  top: 25px;
+  right:30px;
+  cursor:pointer;
+  padding: 8px;
+  border:2px solid chocolate;
+  font-size: 14px;
+  font-weight: 700;
+  background-color: rgb(228, 141, 79);
+  color: aliceblue;
+}
+
+#btn:hover{
+  background-color: rgb(245, 245, 245);
+  color: chocolate;
+}
+
+.container-1{
+  display: flex;
+  gap:9rem 9rem;
+  padding-bottom: 30px;
+  margin-left: 150px;
+}
+.container-2{
+  display: flex;
+  gap:9rem 9rem;
+  padding-bottom: 30px;
+  margin-left: 180px;
+}
+.container-3{
+  display: flex;
+  gap:9rem 9rem;
+  padding-bottom: 10px;
+  margin-left: 180px;
+}
+
+.drinks{
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.d-head{
+  font-size:30px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+  font-weight: 700;
+  margin-left: 30px;
+  color: black;
+  padding-bottom:30px ;
+  padding-top: 60px;
+}
+
+.box{
+ font-weight: 600;
+ font-size: 18px;
+ border: 2px solid rgb(106, 102, 102);
+ padding: 10px;
+ width: 60%;
+ margin-left:100px;
+ box-shadow: 5px 5px 5px rgb(89, 90, 88);
+ color: rgb(97, 95, 95);
+}
+
+#footer{
+  text-align: center;
+  margin-top: 100px;
+  background-color: chocolate;
+  color: aliceblue;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  font-weight: 400;
+  font-size: 18px;
+  padding-left: 30px;
+  padding-right: 20px;
+}
+  </style>
+</head>
+
+
+<body>
+  <!-- heading -->
+  <div class="header">
+    <header>
+      <h1><strong>TASTY TALES</strong></h1>
+    </header>
+
+    <!--contact button  -->
+    <div class="contact">
+      <input type="button" id="btn" value="CONTACT" onclick="window.location.href='contact.html'" />
+  </div>
+</div>
+
+
+<div class="searchBox">
+  <input type="text" name="" id="find" placeholder="search here...." onkeyup="search()"><br>
+  <button type="button" id="submit" class="btn">Search</button>
+</div>
+
+
+<!-- top links -->
+<nav>
+  <a class="links" href="index.html">HOME</a>
+  <a class="links" href="about.html">ABOUT US</a>
+  <a class="links" href="recipes.html">RECIPES</a>
+  <a class="links"  href="#">BLOG</a>
+</nav>    
+
+ 
+
+
+    <!-- drinks recipes -->
+    <section class="drinks">
+
+    <div class="container-1">
+      <div class="d1">
+       <a href="d1.html"> <h2 class="d-head">Cilantro-Celery Juice Punch</h2>
+      <img src="images/celentro.jpeg" alt="error" height="350" width="400" ><p class="box">Prep : 5 mins  |  Total : 10 mins <br><br>Servings : 2 Glasses </p></a>
+    </div>
+
+    <div class="d2"><a href="d2.html">
+      <h2 class="d-head">Cranberry Juice Sangria</h2>
+     <img src="images/craneberry.jpeg" alt="error" height="350" width="400" ><p class="box">Prep : 5 mins | Chill : 4hrs | Total : 4 hrs 5 mins <br><br> Servings : 8 Glasses </p>
+    </div></a>
+
+  </div>
+    
+<div class="container-2">
+   <div class="d3"><a href="d3.html">
+    <h2 class="d-head">Jingle Juice</h2>
+   <img src="images/jingle.jpeg" alt="error" height="350" width="400" ><p class="box">Prep : 5 mins | Total : 5mins mins <br><br> Servings : 1-1/2 Glass </p>
+  </div></a>
+
+  <div class="d4"><a href="d4.html">
+   <h2 class="d-head">Slushy Watermelon Mojitos</h2>
+  <img src="images/mojito1.jpeg" alt="error" height="350" width="400" ><p class="box">Prep : 5mins mins | Total : 10 mins <br><br> Servings : 7 Glasses </p></a>
+ </div>
+</div>
+
+<div class="container-3">
+   <div class="d5"><a href="d5.html">
+    <h2 class="d-head">Peach Mojitos</h2>
+   <img src="images/peachMojito.jpeg" alt="error" height="350" width="400" ><p class="box">Prep : 7 mins | Total : 10 mins <br><br> Servings : 10 Glasses </p>
+  </div></a>
+
+  <div class="d6"><a href="d6.html">
+    <h2 class="d-head">Chocolate Cappuccino</h2>
+   <img src="images/image.jpeg" alt="error" height="350" width="400" ><p class="box">Prep : 5 mins | Total : 5 mins <br><br> Servings : 8 Cups </p>
+  </div></a>
+</div>
+  </section>
+
+
+    
+
+<!-- footer -->
+    <footer id="footer">
+      &copy; TastyTales Built By NizaShaikh
+    </footer>
+<!-- ... Your HTML code (head, body, etc.) remains the same ... -->
+
+
+<script>
+  function search() {
+    const searchTerm = document.getElementById('find').value.toLowerCase();
+    const drinks = document.querySelectorAll('.d-head'); // Selecting all drink headings
+
+    drinks.forEach(drink => {
+      const drinkTitle = drink.textContent.toLowerCase();
+      const parentContainer = drink.parentElement.parentElement; // Getting the parent container of the drink item
+
+      if (drinkTitle.includes(searchTerm)) {
+        parentContainer.style.display = 'block'; // Show the drink container if it matches the search term
+      } else {
+        parentContainer.style.display = 'none'; // Hide the drink container if it doesn't match the search term
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
