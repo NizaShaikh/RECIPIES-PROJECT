@@ -53,7 +53,7 @@ a:active{
 
 .hero{
   height: 50vh;
-  background-image: url("images/pexels-brigitte-tohm-239581.jpg");
+  background-image: url("images/mainImg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   align-items: center;
@@ -79,15 +79,17 @@ a:active{
   text-align:right;
   color: rgb(233, 135, 64);
   margin-left: 750px;
+  color: aliceblue;
 }
 #eat{
   text-align: center;
+  color: aliceblue;
 }
 
 #footer{
   text-align: center;
   margin-bottom:0;
-  margin-top: 60px;
+  /* margin-top: -20px; */
   background-color: chocolate;
   color: aliceblue;
   padding-top: 13px;
@@ -141,4 +143,3 @@ a:active{
 #desserts{
   border: 3px solid rgb(180, 174, 174);
 }
-

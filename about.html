@@ -3,101 +3,104 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About us</title>
+  <title>About Us</title>
   <style>
-*{
-  font-family: sans-serif;
-  text-align: center;
-}
-
-h1{
-  margin-right: 1090px;
-  font-size: 35px;
-  color: chocolate;
-  text-shadow: 4px 4px 4px rgb(242, 127, 86);
-}
-
-  .links{   
-  margin-left: 40px;
-  margin-right: 40px;
-  margin-top: 2px;
-  margin-bottom: 30px;
-  display: inline-block;
-  text-decoration: none;
-  text-align: center;
-
-}
-
-a:link{
-  color: rgb(0, 0, 0);
-}
-a:hover{
-  color:red;
-}
-a:active{
-  color: rgb(104, 219, 87);
-}
-
-#btn{
-  position: absolute;
-  top: 25px;
-  right:30px;
-  cursor:pointer;
-  padding: 8px;
-  border:2px solid chocolate;
-  font-size: 14px;
-  font-weight: 700;
-  background-color: rgb(228, 141, 79);
-  color: aliceblue;
-}
-
-#btn:hover{
-  background-color: rgb(245, 245, 245);
-  color: chocolate;
-}
-
-    p{
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      font-weight:1000px; 
-      font-size: larger;
-    }
-
-    .text{
-      background-color:rgb(255, 250, 250);
-      color: rgb(6, 6, 6);
-      text-align: center;
-      opacity: 0.8;
-    }
-    
-    h3{
+    * {
+      font-family: sans-serif;
       text-align: center;
     }
 
-#clips{
-  font-size: 28px;
-  font-weight: 600;
-  background-color: beige;
-
-}
-
-    .video{
-       padding-top: 10px;
-       margin-top: 15px;
+    h1 {
+      margin-right: 1090px;
+      font-size: 35px;
+      color: chocolate;
+      text-shadow: 4px 4px 4px rgb(242, 127, 86);
     }
 
-    #footer{
-  text-align: center;
-  margin-bottom:0;
-  margin-top: 60px;
-  background-color: chocolate;
-  color: aliceblue;
-  padding-top: 11px;
-  padding-bottom: 11px;
-  font-weight: 400;
-  font-size: 18px;
-  padding-left: 30px;
-  padding-right: 20px;
-}
+    .links {
+      margin: 10px 40px 30px 40px;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    a:link {
+      color: rgb(0, 0, 0);
+    }
+
+    a:hover {
+      color: red;
+    }
+
+    a:active {
+      color: rgb(104, 219, 87);
+    }
+
+    #btn {
+      position: absolute;
+      top: 25px;
+      right: 30px;
+      cursor: pointer;
+      padding: 8px;
+      /* color: rgb(116, 84, 61); */
+      border: 2px solid chocolate;
+      font-size: 14px;
+      font-weight: 700;
+      background-color: rgb(228, 141, 79);
+      color: aliceblue;
+    }
+
+    #btn:hover {
+      background-color: rgb(245, 245, 245);
+      color: chocolate;
+    }
+
+    .text {
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      padding: 40px 20px;
+      width: 80%;
+      margin: -50px auto 20px;
+      box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.1);
+      line-height: 1.6;
+    }
+
+    .text h3 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      font-family: 'Georgia', serif;
+    }
+
+    .text p {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .video-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .video {
+      margin: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .video video {
+      width: 300px; /* Adjusted size */
+      height: auto; /* Maintain aspect ratio */
+    }
+
+    #footer {
+      text-align: center;
+      margin-top: 60px;
+      background-color: chocolate;
+      color: aliceblue;
+      padding: 11px;
+      font-size: 18px;
+    }
   </style>
 </head>
 <body>
@@ -105,34 +108,56 @@ a:active{
     <h1><strong>TASTY TALES</strong></h1>
   </header>
   <nav>
-    <a class="links" href="index.html">HOME</a>
+    <a class="links" href="index.php">HOME</a>
     <a class="links" href="about.html">ABOUT US</a>
-     <a class="links" href="recipes.html">RECIPES</a>
-     <a class="links"  href="#">BLOG</a>
-   </nav>
-   <input type="button" id="btn" value="CONTACT" onclick="window.location.href='contact.html';" />
+    <a class="links" href="recipes.html">RECIPES</a>
+    <a class="links" href="blog.php">BLOG</a>
+  </nav>
+  <input type="button" id="btn" value="CONTACT" onclick="window.location.href='contact.html';" />
+  
   <div class="text">
     <h3>WE PROVIDE TASTY FOOD RECIPES</h3>
-    <p>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus vel repellat facilis veniam voluptatem maxime q impedit fugiat consequatur modi iusto velit voluptatem dolorum sunam asperiores. Sapiente assurepellat odit impedit ea voluptas mollitia debitis neque
-      olorum. Deserunt , nesciunt tempora eveniet dolorem ea incidunt deleniti aliquam laudantium labore, temporibus repudiandae dicta fugit ducimus quod nulla molestiae illo perspiciatis totam asperiores. Sapiente assurepellat odit impedit ea voluptas mollitia debitis neque odio quo fuga sit perspiciatis voluptate reprehenderit quas. Numquam, deserunt?
-    </p>
-  </div>
-  <p id="clips">Look At These  Tasty Food Clips </p>
+    <p><strong>Who We Are</strong></p>
+    <p>Home cooks are our heroes—it’s as simple as that. TASTY TALES is a community built by and for kitchen experts. 
+      We celebrate the cooks who dedicate their weekends to perfecting a beef bourguignon but love the simplicity 
+      of a slow-cooker recipe, too...</p>
+    <p>Most importantly, TASTY TALES connects home cooks with their greatest sources of inspiration—other home cooks.</p>
+    <p><strong>Above all, we are:</strong></p>
+    <ul>
+      <li><strong>Friendly:</strong> We love trading ideas and hanging out with fellow home cooks.</li>
+      <li><strong>Supportive:</strong> Struggling with dinner inspiration? We’re here to help!</li>
+      <li><strong>Creative:</strong> Cooking is an art. We experiment and express ourselves through food.</li>
+    </ul>
+    <p>The heart of TASTY TALES is our community of home cooks who share their beloved family recipes...</p>
+    <p><strong>Our Mission</strong></p>
+    <p>At TASTY TALES, our mission is to inspire and empower home cooks to explore their culinary skills and share their delicious creations with the world. We believe that food brings people together, and we’re here to help you make unforgettable memories in the kitchen.</p>
+    <p><strong>Join Us!</strong></p>
+    <p>Whether you’re a novice or an experienced chef, we invite you to join our community. Share your recipes, get feedback, and make friends who share your passion for food!</p>
+</div>
 
-    <video class="video" height="300px" width="600px" autoplay loop>
-<source src="images/pexels_videos_2620043 (2160p).mp4" type="video/mp4">
-</video>
+<h2 id="clips">Look At These Tasty Food Clips</h3>
 
-<video class="video" height="300px" width="600px" autoplay loop>
-  <source src="images/video (1080p) (1).mp4" type="video/mp4">
-</video>
+<div class="video-container">
+    <video class="video" height="200px" width="300px" autoplay loop muted>
+        <source src="images/pexels_videos_2620043 (2160p).mp4" type="video/mp4">
+    </video>
+    <video class="video" height="200px" width="300px" autoplay loop muted>
+        <source src="images/video (1080p) (1).mp4" type="video/mp4">
+    </video>
+    <video class="video" height="200px" width="300px" autoplay loop muted>
+        <source src="images/video (1080p).mp4" type="video/mp4">
+    </video>
+</div>
 
-<video class="video" height="300px" width="600px" autoplay loop>
-  <source src="images/video (1080p).mp4" type="video/mp4">
-</video>
 
-<footer id="footer">&copy; <span id="date"></span> TastyTales Built By NizaShaikh</footer>
+  <footer id="footer">&copy; <span id="date"></span> TastyTales Built By NizaShaikh</footer>
 
+  <script>
+    document.getElementById('date').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
+
+
+
+

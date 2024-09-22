@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitchen Tips</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: chocolate;
+            color: aliceblue;
+        }
+
+        h1 {
+            font-size: 36px;color: white;
+        }
+
+        .tips-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .tip-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 15px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .tip-card img {
+            max-width: 100%;
+            /* border-radius: 8px; */
+            margin-bottom: 10px;
+        }
+
+        .tip-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .tip-card p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: chocolate;
+            color: aliceblue;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .tips-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tip-card {
+                width: 80%;
+            }
+        }
+
+        
+.links{
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 30px;
+  margin-bottom: 5px;
+  display: inline-block;
+  text-decoration: none;
+  align-items: center;
+  text-align: center;
+}
+
+a:link{
+  color: rgb(0, 0, 0);
+}
+a:hover{
+  color:red;
+}
+a:active{
+  color: rgb(104, 219, 87);
+}
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Kitchen Tips</h1>
+</header>
+
+<nav class="nav-links"></nav>
+    <a class="links" href="index.php">HOME</a>
+    <a class="links" href="about.html">ABOUT US</a>
+    <a class="links" href="submit_recipe.html">SUBMIT RECIPES</a>
+    <a class="links" href="php/display_recipes.php">VIEW RECIPES</a>
+    <a class="links" href="blog.php">BLOG</a>
+    <a class="links"href="kitchen_tips.html">KITCHEN TIPS</a>
+
+<div class="tips-container">
+    <div class="tip-card">
+        <img src="images/knives.jpg" alt="Tip 1">
+        <h3>Keep Your Knives Sharp</h3>
+        <p>Regularly sharpen your knives to make cutting easier and safer.</p>
+    </div>
+    <div class="tip-card">
+        <img src="images/spices.jpeg" alt="Tip 2">
+        <h3>Organize Your Spices</h3>
+        <p>Keep your spices in clear jars and label them for easy access.</p>
+    </div>
+    <div class="tip-card">
+        <img src="images/spoon.jpg" alt="Tip 3">
+        <h3>Use a Wooden Spoon for Stirring</h3>
+        <p>Wooden spoons don’t scratch your pots and pans and are heat-resistant.</p>
+    </div>
+    <div class="tip-card">
+        <img src="images/sutboard.jpg" alt="Tip 4">
+        <h3>Keep Your Cutting Board Clean</h3>
+        <p>Use lemon and salt to scrub and sanitize your cutting board.</p>
+    </div>
+    <div class="tip-card">
+        <img src="images/AR-How-To-Measure-Sticky-Ingredients-4x3-12288bf2b5d14fcbbde0d4d13815793c.jpg" alt="Tip 5">
+        <h3>Measure Sticky Ingredients</h3>
+        <p>Coat your measuring cup with cooking spray for easy release.</p>
+    </div>
+    <div class="tip-card">
+        <img src="images/herbs.jpg" alt="Tip 6">
+        <h3>Store Herbs in Water</h3>
+        <p>Keep fresh herbs in a glass of water in the fridge to extend their life.</p>
+    </div>
+</div>
+
+<footer>
+    &copy; <span id="date"></span> TastyTales Built By NizaShaikh
+</footer>
+
+<script>
+    document.getElementById('date').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

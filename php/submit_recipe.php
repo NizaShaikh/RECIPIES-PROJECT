@@ -1,38 +1,65 @@
 <?php
-// Enable error reporting
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-include 'db_connect.php';
-
+include 'db_connect.php'; // Include your database connection file
 session_start();
-if (!isset($_SESSION['user_id'])) {
-    echo "Please log in to submit a recipe or review!";
-} else {
-    // Allow submission
+
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    echo "<div class='alert'>
+            <h2 style='color: black; text-align: center;'>You must be logged in to submit a recipe.</p>
+            <h3 style='text-align: center;'>Please <a href='login.php'>LOG IN</a> or <a href='signup.php'>SIGN UP</a>.</p>
+            <h4 style='color:black; margin-left:20px; margin-top:-90px;'><a href='../index.php'>BACK TO HOME</a></h4>
+            </div>";
+   
+
+    exit(); // Stop the execution if not logged in
 }
 
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Sanitize and validate input data
-    $title = isset($_POST['title']) ? $conn->real_escape_string(trim($_POST['title'])) : '';
-    $description = isset($_POST['description']) ? $conn->real_escape_string(trim($_POST['description'])) : '';
-    $ingredients = isset($_POST['ingredients']) ? $conn->real_escape_string(trim($_POST['ingredients'])) : '';
-    $instructions = isset($_POST['instructions']) ? $conn->real_escape_string(trim($_POST['instructions'])) : '';
+    // Check if the image file has been uploaded
+    if (isset($_FILES["image"]) && $_FILES["image"]["error"] == 0) {
+        $target_dir = "../uploads/";
+        $imageName = basename($_FILES["image"]["name"]);
+        $target_file = $target_dir . $imageName;
+        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-    // Check if all required fields are filled
-    if (!empty($title) && !empty($description) && !empty($ingredients) && !empty($instructions)) {
-        // Prepare and execute the SQL query
-        $sql = "INSERT INTO recipes (title, description, ingredients, instructions) VALUES ('$title', '$description', '$ingredients', '$instructions')";
-        
-        if ($conn->query($sql) === TRUE) {
-            echo "Recipe submitted successfully.";
+        // Ensure it's an actual image
+        $check = getimagesize($_FILES["image"]["tmp_name"]);
+        if ($check !== false) {
+            // Upload the file to the server
+            if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                // Prepare and bind the SQL statement
+                $stmt = $conn->prepare("INSERT INTO recipes (title, description, ingredients, instructions, category, image) VALUES (?, ?, ?, ?, ?, ?)");
+
+                // Bind parameters to the SQL statement (s = string type)
+                $stmt->bind_param("ssssss", $title, $description, $ingredients, $instructions, $category, $image);
+
+                // Set variables and execute the statement
+                $title = $_POST["title"];
+                $description = $_POST["description"];
+                $ingredients = $_POST["ingredients"];
+                $instructions = $_POST["instructions"];
+                $category = $_POST["category"];
+                $image = $imageName;  // Store only the image name in the database
+
+                // Execute the prepared statement
+                if ($stmt->execute()) {
+                    echo "Recipe submitted successfully!";
+                    // Redirect to the display page (if needed)
+                    header("Location: display_recipes.php");
+                    exit();
+                } else {
+                    echo "Error: " . $stmt->error;
+                }
+
+                // Close the prepared statement
+                $stmt->close();
+            } else {
+                echo "Sorry, there was an error uploading your image.";
+            }
         } else {
-            echo "Error: " . $conn->error;
+            echo "File is not an image.";
         }
-    } else {
-        echo "Please fill in all fields.";
     }
 }
 
