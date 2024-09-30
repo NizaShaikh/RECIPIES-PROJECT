@@ -68,22 +68,24 @@ a:active{
   height: 100%;
   top:0;
   left: 0;
-   /* border-radius:var(--borderRadius); */
-   display: flex;
-   align-items: center;
-   /* justify-content: center; */
+  /* border-radius:var(--borderRadius); */
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
 }
 
 .hero-text{
+  /* color: chocolate; */
   font-size: 25px;
   text-align:right;
-  color: rgb(233, 135, 64);
+  /* color: rgb(233, 135, 64); */
   margin-left: 750px;
-  color: aliceblue;
+  /* color: aliceblue; */
 }
 #eat{
   text-align: center;
-  color: aliceblue;
+  /* color: aliceblue; */
+  /* color: chocolate; */
 }
 
 #footer{

@@ -1,21 +1,21 @@
 
-// window.onload = function() {   
-//         alert("Create an account to submit recipes!");
-//     }
+    // let slideIndex = 0;
+    // showSlides();
 
-    // document.getElementById("loginForm").addEventListener("submit", function(event) {
-    //     let email = document.getElementById("email").value;
-    //     let password = document.getElementById("password").value;
-    
-    //     if (!email || !password) {
-    //         event.preventDefault(); // Prevent form submission
-    //         alert("Please fill out all fields!");
-    //     }else {
-    //         // Submit the form or proceed with AJAX request
-    //         alert('login successful!');
-    //         // Here, you would typically submit the form via AJAX or to a backend PHP script
+    // function showSlides() {
+    //     let i;
+    //     let slides = document.getElementsByClassName("mySlides");
+    //     for (i = 0; i < slides.length; i++) {
+    //         slides[i].style.display = "none";  
     //     }
-    // });
+    //     slideIndex++;
+    //     if (slideIndex > slides.length) {slideIndex = 1}    
+    //     slides[slideIndex-1].style.display = "block";  
+    //     setTimeout(showSlides, 3000); // Change image every 3 seconds
+    // }
+
+
+
 
     document.getElementById("loginForm").addEventListener("submit", function(e) {
         var email = document.getElementById("email").value;

@@ -183,10 +183,15 @@ $result = $conn->query($query);
 
 h2 {
     margin-bottom: 10px;
+    color: rgb(233, 135, 64);
 }
 
 p {
     margin-bottom: 15px;
+    color: rgb(233, 135, 64);
+}
+#eat{
+  color: rgb(233, 135, 64);
 }
 
 .newsletter-form {
@@ -356,12 +361,74 @@ body {
     text-decoration: underline;
 }
 
-/* .footer-bottom {
-    margin-top: 20px;
+.slideshow-container {
+  position: relative;
+  max-width: 100%; 
+  height: 350px; /* Adjust according to the size you want */
+   margin: auto;
+  overflow: hidden;
+}
+
+.mySlides {
+  display: none;
+}
+
+.mySlides img {
+  width: 100%;
+  height: 400px; /* Adjust this height based on your design */
+  object-fit: cover;
+}
+
+.slideshow-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
-    color: #888;
-    font-size: 14px;
-} */
+    /* color: white; */
+    color: #fff; 
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); Add a subtle shadow
+    width: 35%; /* Width of the text box */
+    height: 70px;
+}
+
+.slideshow-text h1 {
+    font-size: 38px; /* Large bold heading */
+    font-weight: bold;
+    margin: 0;
+    text-transform: uppercase; /* Makes the text all uppercase */
+    letter-spacing: 2px; /* Adds space between letters */
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
+    color: white;
+}
+
+.slideshow-text p {
+    font-size: 20px;
+    margin-top: 10px;
+    letter-spacing: 2px;
+    font-style: italic;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .slideshow-text h1 {
+        font-size: 36px; /* Smaller heading for smaller screens */
+    }
+
+    .slideshow-text p {
+        font-size: 18px;
+    }
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0.5} 
+  to {opacity: 1}
+}  
 
 
   </style>
@@ -389,14 +456,47 @@ body {
     <input type="button" id="btn" value="CONTACT" onclick="window.location.href='contact.html';" />
   </nav>
 
-  <div class="hero">
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+        <img src="images/n1.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+        <img src="images/i2.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+        <img src="images/pexels-catscoming-674574.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+        <img src="images/p1.jpg" style="width:100%">
+    </div>
+    <div class="mySlides fade">
+        <img src="images/p2.jpg" style="width:100%">
+    </div>
+    <div class="mySlides fade">
+        <img src="images/n4.jpg" style="width:100%">
+    </div>
+
+    <!-- Add more slides as needed -->
+
+    <!-- Text overlay that stays constant -->
+    <div class="slideshow-text">
+        <h1>MOUTH WATERING RECIPES</h1>
+        <p>Eat well, Live well</p>
+    </div>
+</div>
+
+
+  <!-- <div class="hero">
     <div class="hero-container">
       <div class="hero-text">
-        <h2 color="white">MOUTH WATERING RECIPES</h2>
+        <h2>MOUTH WATERING RECIPES</h2>
         <p id="eat">Eat well, Live well</p>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <div class="recipes">
   <div class="food">
@@ -474,11 +574,11 @@ body {
 
 <div class="icons">
 
-<a href="https://www.youtube.com/@tastytaleskitchen78" target="_blank" p id="yt" class="fa-brands fa-youtube fa-2x"></p></a>
+<a href="https://www.youtube.com/@tastytales" target="_blank" p id="yt" class="fa-brands fa-youtube fa-2x"></p></a>
 
 <a href="#" p id="twitter" class="fa-brands fa-twitter fa-2x"></p></a>
 
-<a href="" p id="pin" class="fa-brands fa-pinterest fa-2x"></p></a>
+<a href="https://www.pinterest.com/tasty_tales/" p id="pin" class="fa-brands fa-pinterest fa-2x"></p></a>
 
 <a href="#" p id="fb" class="fa-brands fa-facebook fa-2x"></p></a>
 
@@ -513,7 +613,22 @@ body {
 
 
   <footer id="footer">&copy; <span id="date"></span> TastyTales Built By NizaShaikh</footer>
+  <script>
+  let slideIndex = 0;
+    showSlides();
 
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        slides[slideIndex-1].style.display = "block";  
+        setTimeout(showSlides, 2000); // Change image every 3 seconds
+    }
+</script>
   <script>
     // For dynamically setting the year in the footer
     document.getElementById('date').textContent = new Date().getFullYear();
