@@ -46,6 +46,28 @@
             text-align: center;
         }
 
+        .dark-mode {
+  background-color: #121212; /* Dark background */
+  color: #ffffff; /* Light text */
+}
+
+.dark-mode nav,
+.dark-mode header,
+.dark-mode footer {
+  background-color: #1e1e1e; /* Dark header/footer/nav */
+}
+
+.dark-mode a {
+  color: #ff8c00; /* Accent link color */
+}
+
+.dark-mode .btn {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #ff8c00;
+}
+
+
         .tip-card img {
             max-width: 100%;
             /* border-radius: 8px; */
@@ -105,6 +127,28 @@ a:active{
   color: rgb(104, 219, 87);
 }
 
+
+.dark-mode {
+  background-color: #121212; /* Dark background */
+  color: #ffffff; /* Light text */
+}
+
+.dark-mode nav,
+.dark-mode header,
+.dark-mode footer {
+  background-color: #1e1e1e; /* Dark header/footer/nav */
+}
+
+.dark-mode a {
+  color: #ff8c00; /* Accent link color */
+}
+
+.dark-mode .btn {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #ff8c00;
+}
+
     </style>
 </head>
 <body>
@@ -120,7 +164,7 @@ a:active{
     <a class="links" href="php/display_recipes.php">VIEW RECIPES</a>
     <a class="links" href="blog.php">BLOG</a>
     <a class="links"href="kitchen_tips.html">KITCHEN TIPS</a>
-
+    <button id="dark-mode-btn" class="btn dark-mode-toggle">🌙 Dark Mode</button>
 <div class="tips-container">
     <div class="tip-card">
         <img src="images/knives.jpg" alt="Tip 1">
@@ -158,6 +202,7 @@ a:active{
     &copy; <span id="date"></span> TastyTales Built By NizaShaikh
 </footer>
 
+<script src="js/script.js"></script>
 <script>
     document.getElementById('date').textContent = new Date().getFullYear();
 </script>

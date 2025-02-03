@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="style.css">
   <style>
     *{
       font-family:sans-serif;
@@ -222,6 +223,32 @@ p{
   padding-left: 30px;
   padding-right: 20px;
 }
+
+
+.dark-mode {
+  background-color: #121212; /* Dark background */
+  color: #ffffff; /* Light text */
+}
+
+.dark-mode nav,
+.dark-mode header,
+.dark-mode footer {
+  background-color: #1e1e1e; /* Dark header/footer/nav */
+}
+
+#dark-mode-btn a {
+  color: #ff8c00; /* Accent link color */
+}
+
+.dark-mode .btn {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #ff8c00;
+  /* width:auto; */
+  max-width: 200px; 
+}
+
+
 </style>
   <script src="https://kit.fontawesome.com/9e9cdc6ad3.js" crossorigin="anonymous"></script>
   <script src="https://web3forms.com/#start "></script>
@@ -239,6 +266,7 @@ p{
     <a class="links" href="about.html">ABOUT US</a>
      <a class="links" href="recipes.html">RECIPES</a>
      <a class="links"  href="blog.php">BLOG</a>
+     <button id="dark-mode-btn" class="btn dark-mode-toggle">🌙 Dark Mode</button>
   </nav>    
   <!--contact button  -->
   <input type="button" id="btn" value="CONTACT" onclick="window.location.href='contact.html';" />
@@ -290,6 +318,9 @@ p{
   </section>
 </div> 
 
+
+
+
 <div class="move">
 <h2 id="clips">Look At These Tasty Food Clips</h3>
 
@@ -329,6 +360,6 @@ p{
     &copy; <span id="date"></span> TastyTales Built By NizaShaikh
   </footer>
 </div>
-
+<script src="js/script.js"></script>
 </body>
 </html>

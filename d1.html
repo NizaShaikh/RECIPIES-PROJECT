@@ -5,6 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
+
+.recipe-options {
+    display: flex;
+    justify-content: center; /* Align the buttons in the center */
+    gap: 10px; /* Add space between buttons */
+    margin-top: 15px;
+}
+
+.option-btn {
+    background-color: #e67e22; /* Button color */
+    color: white; /* Text and icon color */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Space between icon and text */
+    transition: 0.3s;
+}
+
+.option-btn i {
+    font-size: 16px; /* Icon size */
+}
+
+.option-btn:hover {
+    background-color: #d35400; /* Hover effect */
+    transform: translateY(-2px); /* Slight hover lift */
+}
+
+.option-btn:active {
+    transform: translateY(0); /* Button pressed effect */
+}
+
+
     *{
       font-family:sans-serif;
       text-align: center;
@@ -119,8 +155,11 @@ h3{
   padding-left: 30px;
   padding-right: 20px;
 }
- 
-  </style>
+
+
+
+</style>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 <body>
   <header class="header">
@@ -170,9 +209,80 @@ h3{
 
           <p class="box">Prep : 5 mins  |  Total : 10 mins <br><br>Servings : 2 Glasses </p>       
 
+
+          <div class="recipe-options">
+            <button class="option-btn" onclick="shareRecipe()">
+                <i class="fas fa-share-alt"></i> Share
+            </button>
+            <button class="option-btn" onclick="saveRecipe()">
+                <i class="fas fa-bookmark"></i> Save
+            </button>
+            <button class="option-btn" onclick="downloadRecipe()">
+                <i class="fas fa-download"></i> Download
+            </button>
+            <button class="option-btn" onclick="printRecipe()">
+                <i class="fas fa-print"></i> Print
+            </button>
+        </div>
+        
+
 <!-- footer  -->
 <footer id="footer">&copy; TastyTales Built By NizaShaikh</footer>
+<script src="js/interactivity.js"></script>
+<script>
+function shareRecipe() {
+    const shareData = {
+        title: "Recipe of the Day",
+        text: "Check out this amazing recipe on our website!",
+        url: window.location.href, // Current page URL
+    };
 
+    if (navigator.share) {
+        navigator.share(shareData)
+            .then(() => alert("Recipe shared successfully!"))
+            .catch((err) => console.error("Error sharing:", err));
+    } else {
+        alert("Sharing is not supported on this browser. Copy the link to share: " + shareData.url);
+    }
+}
+
+function saveRecipe() {
+    const recipeTitle = "Recipe of the Day: Delicious Cake"; // Replace this dynamically
+    const recipeUrl = window.location.href; // Current page URL
+
+    // Get existing saved recipes or create a new array
+    const savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || [];
+
+    // Check if recipe is already saved
+    const isAlreadySaved = savedRecipes.some((recipe) => recipe.url === recipeUrl);
+
+    if (!isAlreadySaved) {
+        // Add new recipe to the list
+        savedRecipes.push({ title: recipeTitle, url: recipeUrl });
+        localStorage.setItem("savedRecipes", JSON.stringify(savedRecipes));
+        alert("Recipe saved successfully!");
+    } else {
+        alert("This recipe is already saved!");
+    }
+}
+
+
+
+function downloadRecipe() {
+  const recipeContent = "Recipe of the Day: Delicious Cake\nIngredients:\n- Flour\n- Sugar\n- Eggs\nInstructions:\n1. Mix ingredients.\n2. Bake at 350°F for 30 minutes.";
+  const blob = new Blob([recipeContent], { type: "text/plain" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "recipe.txt"; // Downloaded file name
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function printRecipe() {
+  window.print(); // Opens the browser's print dialog
+}
+</script>
 
 </body>
 </html>

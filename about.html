@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us</title>
+  <link rel="stylesheet" href="style.css">
   <style>
     * {
       font-family: sans-serif;
@@ -101,6 +102,90 @@
       padding: 11px;
       font-size: 18px;
     }
+    
+.dark-mode {
+  background-color: #121212; /* Dark background */
+  color: #ffffff; /* Light text */
+}
+
+.dark-mode nav,
+.dark-mode header,
+.dark-mode footer {
+  background-color: #1e1e1e; /* Dark header/footer/nav */
+}
+
+.dark-mode a {
+  color: #ff8c00; /* Accent link color */
+}
+
+.dark-mode .btn {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #ff8c00;
+}
+
+/* Personal Chef Services Section */
+.personal-chef-services {
+    padding: 50px 20px;
+    background-color: #f8f8f8; /* Light gray background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.chef-services-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    align-items: center;
+    gap: 20px;
+}
+
+.chef-image {
+    width: 45%; /* Adjust image size */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.chef-services-content {
+    width: 50%;
+    text-align: left;
+}
+
+.chef-services-content h2 {
+    font-size: 36px;
+    color: #FF5733; /* Matches theme */
+    margin-bottom: 20px;
+}
+
+.chef-services-content p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.chef-contact-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FF5733;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-left: 200px;
+}
+
+.chef-contact-btn:hover {
+    background-color: white;
+    color: #FF5733;
+    border: 2px solid #FF5733;
+}
+
   </style>
 </head>
 <body>
@@ -112,6 +197,7 @@
     <a class="links" href="about.html">ABOUT US</a>
     <a class="links" href="recipes.html">RECIPES</a>
     <a class="links" href="blog.php">BLOG</a>
+    <button id="dark-mode-btn" class="btn dark-mode-toggle">🌙 Dark Mode</button>
   </nav>
   <input type="button" id="btn" value="CONTACT" onclick="window.location.href='contact.html';" />
   
@@ -135,6 +221,22 @@
     <p>Whether you’re a novice or an experienced chef, we invite you to join our community. Share your recipes, get feedback, and make friends who share your passion for food!</p>
 </div>
 
+<!-- Personal Chef Services Section -->
+<section class="personal-chef-services">
+  <div class="chef-services-container">
+      <img src="images/personal-chef.jpeg" alt="Personal Chef Services" class="chef-image">
+      <div class="chef-services-content">
+          <h2>Personal Chef Services</h2>
+          <p>
+              Experience the luxury of having your own personal chef! Whether you're hosting a private dinner, 
+              a special event, or just want to enjoy customized meals at home, we've got you covered. 
+              Our chefs bring creativity, fresh ingredients, and exquisite flavors right to your table.
+          </p>
+          <a href="contact.html" class="btn chef-contact-btn">Book Your Chef Now</a>
+      </div>
+  </div>
+</section>
+
 <h2 id="clips">Look At These Tasty Food Clips</h3>
 
 <div class="video-container">
@@ -155,6 +257,7 @@
   <script>
     document.getElementById('date').textContent = new Date().getFullYear();
   </script>
+  <script src="js/script.js"></script>
 </body>
 </html>
 

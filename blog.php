@@ -31,7 +31,30 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Blog</title>
+    <link rel="stylesheet" href="style.css">
 <style>
+
+.dark-mode {
+  background-color: #121212; /* Dark background */
+  color: #ffffff; /* Light text */
+}
+
+.dark-mode nav,
+.dark-mode header,
+.dark-mode footer {
+  background-color: #1e1e1e; /* Dark header/footer/nav */
+}
+
+.dark-mode a {
+  color: #ff8c00; /* Accent link color */
+}
+
+.dark-mode .btn {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #ff8c00;
+}
+
     body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -250,7 +273,6 @@ a:active{
   color: rgb(104, 219, 87);
 }
 
-
 </style>
 </head>
 <body>
@@ -264,6 +286,7 @@ a:active{
       <a class="links" href="about.html">ABOUT US</a>
        <a class="links" href="recipes.html">RECIPES</a>
        <a class="links"  href="blog.php">BLOG</a>
+       <button id="dark-mode-btn" class="btn dark-mode-toggle">🌙 Dark Mode</button>
     </nav>    
     <main>
         <section class="blog-post">
@@ -333,6 +356,8 @@ a:active{
     </ul>
 </section>
     <script src="js/interactivity.js"></script>
+    <script src="js/script.js"></script>
+
 </body>
 </html>
 

@@ -94,7 +94,7 @@ button {
             <select name="category" id="category" required>
                 <option value="drinks">Drinks</option>
                 <option value="starters">Starters</option>
-                <option value="main course">Main Course</option>
+                <option value="main_course">Main Course</option>
                 <option value="desserts">Desserts</option>
             </select><br>
             
@@ -113,6 +113,10 @@ button {
     <!-- Add Image Upload Option -->
     <label for="image">Upload Image:</label>
     <input type="file" id="category" name="image" accept="image/*" required><br>
+
+    <!-- video -->
+    <label for="video_url">YouTube Video URL:</label>
+    <input type="text" id="video_url" name="video_url" placeholder="Enter YouTube video link" required>
 
             <button type="submit">Submit Recipe</button>
         </form>

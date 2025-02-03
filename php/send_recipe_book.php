@@ -17,7 +17,7 @@ try {
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port       = 587;
 
-    $mail->setFrom('nizashaikh26@gmail.com', 'Test Sender');
+    $mail->setFrom('nizashaikh26@gmail.com', 'Tasty Tales');
     
     // Get the email from the form submission
     $recipientEmail = $_POST['email'];

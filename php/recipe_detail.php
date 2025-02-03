@@ -130,6 +130,28 @@ a:hover{
     color: red;
 }
 
+/* video */
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    overflow: hidden;
+    padding-top: 56.25%;
+    margin-bottom: -150px; 
+    /* Aspect ratio for 16:9 videos */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 60%;
+    border: none;
+}
+
+
     </style>
 </head>
 <body>
@@ -152,6 +174,29 @@ a:hover{
 </div>
 
 
+<div class="recipe-card">
+    <!-- <img src="uploads/<?php echo $recipe['image']; ?>" alt="Recipe Image"> -->
+    <h3><?php echo $recipe['title']; ?></h3>
+    <p><?php echo $recipe['description']; ?></p>
+
+
+    <!-- Options: Share, Save, Download, Printable -->
+    <div class="recipe-options">
+            <button class="option-btn" onclick="shareRecipe()">
+                <i class="fas fa-share-alt"></i> Share
+            </button>
+            <!-- <button class="option-btn" onclick="saveRecipe()">
+                <i class="fas fa-bookmark"></i> Save
+            </button> -->
+            <button class="option-btn" onclick="downloadRecipe()">
+                <i class="fas fa-download"></i> Download
+            </button>
+            <button class="option-btn" onclick="printRecipe()">
+                <i class="fas fa-print"></i> Print
+            </button>
+        </div>
+
+
     <!-- Recipe Details -->
     <div class="recipe-details">
         <h3>Description:</h3>
@@ -164,7 +209,27 @@ a:hover{
         <p><?php echo nl2br($recipe['instructions']); ?></p>
     </div>
 
-    <!-- Back to Recipes Button -->
+  <!-- Video Section -->
+  <?php if (!empty($recipe['video_url'])): ?>
+                <h3>Watch Recipe Video</h3>
+                <div class="video-container">
+                    <iframe 
+                        width="100%" 
+                        height="315" 
+                        src="<?php echo htmlspecialchars($recipe['video_url']); ?>" 
+                        title="Recipe Video" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            <?php endif; ?>
+        <!-- </div> -->
+        
+    
+
+
+     <!-- Back to Recipes Button -->
     <a href="display_recipes.php" class="back-link">Back to Recipes</a>
 </div>
 
@@ -197,8 +262,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Fetch comments for the current recipe
 $sql = "SELECT * FROM comments WHERE recipe_id = '$recipe_id' ORDER BY created_at DESC";
 $result = $conn->query($sql);
-
 ?>
+
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -356,7 +424,40 @@ button:hover{
     color: gold;
 }
 
-    </style>
+/* share save */
+.recipe-options {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.recipe-options button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 12px;
+    background-color: rgb(228, 141, 79);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.recipe-options button:hover {
+    background-color:rgb(255, 255, 255);
+    color: orangered;
+}
+
+.recipe-options i {
+    font-size: 1rem;
+}
+</style>
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    rel="stylesheet"/>
+
 </head>
 <body>
      <!-- Comment Submission Form -->
@@ -399,14 +500,47 @@ button:hover{
     </ul>
 </section>
     <script src="js/interactivity.js"></script>
-</body>
-</html>
-
 <?php
 // Close the database connection
 $conn->close();
 ?>
 
 
+<script>
+    // share save opt
+    
+    function shareRecipe() {
+    const shareData = {
+        title: "Recipe of the Day",
+        text: "Check out this amazing recipe on our website!",
+        url: window.location.href, // Current page URL
+    };
+
+    if (navigator.share) {
+        navigator.share(shareData)
+            .then(() => alert("Recipe shared successfully!"))
+            .catch((err) => console.error("Error sharing:", err));
+    } else {
+        alert("Sharing is not supported on this browser. Copy the link to share: " + shareData.url);
+    }
+}
+
+
+function downloadRecipe() {
+  const recipeContent = "Recipe of the Day: Delicious Cake\nIngredients:\n- Flour\n- Sugar\n- Eggs\nInstructions:\n1. Mix ingredients.\n2. Bake at 350°F for 30 minutes.";
+  const blob = new Blob([recipeContent], { type: "text/plain" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "recipe.txt"; // Downloaded file name
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function printRecipe() {
+  window.print(); // Opens the browser's print dialog
+}
+
+</script>
 </body>
 </html>
